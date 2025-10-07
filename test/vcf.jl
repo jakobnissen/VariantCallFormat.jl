@@ -94,7 +94,7 @@
     @test VCF.info(record, "AA") == "AT"
     @test VCF.hasinfo(record, "DB")
     @test VCF.info(record, "DB") == ""
-    @test VCF.infokeys(record) == ["DP", "AA", "DB"]
+    @test Set(VCF.infokeys(record)) == Set(["DP", "AA", "DB"])
     @test !VCF.hasinfo(record, "XY")
     record = VCF.Record(record, genotype=[Dict("GT" => "0/0", "DP" => [10,20])])
     @test VCF.format(record) == ["DP", "GT"]

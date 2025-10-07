@@ -501,6 +501,8 @@ end
     infokeys(record::Record)::Vector{String}
 Get the keys of the additional information of `record`.
 This function returns an empty vector when the INFO field is missing.
+
+The order of keys are an implementation detail and may change in future versions.
 """
 function infokeys(record::Record)::Vector{String}
     checkfilled(record)
